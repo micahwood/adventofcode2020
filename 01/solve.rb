@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-nums = read_input('./1.txt')
+nums = read_input('./01/input.txt')
 
 until nums.empty?
   x = nums.pop
@@ -12,7 +12,7 @@ until nums.empty?
 end
 
 puts 'part 2'
-nums = read_input('./1.txt')
+nums = read_input('./01/input.txt')
 
 until nums.empty?
   x = nums.pop
@@ -24,4 +24,18 @@ until nums.empty?
       break
     end
   end
+end
+
+puts 'Joe\'s memo solution'
+nums = read_input('./01/input.txt')
+
+memo = {}
+
+nums.each do |x|
+  y = 2020 - x
+  if memo[x]
+    p x * y
+    break
+  end
+  memo[y] = y
 end
