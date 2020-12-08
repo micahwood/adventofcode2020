@@ -5,3 +5,7 @@ def read_input(path, to_i = true)
   lines = lines.map(&:to_i) if to_i
   lines
 end
+
+def read_groups(path)
+  File.read(path).split("\n\n")
+end
