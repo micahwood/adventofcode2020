@@ -17,3 +17,12 @@ total = input.reduce(0) do |totals, answers|
 end
 
 puts total
+
+any_answered_yes = 0
+all_answered_yes = 0
+input.each do |group|
+  answers = group.split("\n").map { |person| Set.new(person.chars) }
+  any_answered_yes += answers.reduce(:union).size
+  all_answered_yes += answers.reduce(:intersection).size
+end
+p [any_answered_yes, all_answered_yes]
